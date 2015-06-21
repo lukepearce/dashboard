@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Ten4 Design Ltd">
+	<meta name="description" content='"Useful" studio things'>
+	<meta name="viewport" content="width=device-width,user-scalable=0,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+	<link rel="shortcut icon" href="assets/images/fav.ico">
+	<link rel="apple-touch-icon-precomposed" href="assets/images/apple-touch-icon-precomposed.png">
+
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=IM+Fell+English+SC">
+	<link rel="stylesheet" href="assets/css/responsive.css">
+	<link rel="stylesheet" href="assets/css/global.css" media="screen">
+
+	<title>Ten4 Dashboard</title>
+</head>
+
+<body>
+
+<canvas id="background-canvas"></canvas>
+
+<div class="container" id="header" role="banner">
+	<div class="row">
+		<div class="w12 relative">
+			<div id="header-inner">
+				<h1 id="logo">Ten4</h1>
+				<ul id="nav-misc">
+					<li><a href="https://twitter.com/ten4design" class="social-icon twitter"></a></li>
+					<li><a href="https://www.facebook.com/pages/Ten4-Design/151345928232146" class="social-icon facebook"></a></li>
+					<li><button id="hacker-button"></button></li>
+					<li><button id="cat-button"></button></li>
+					<li><button id="pirate-button"></button></li>
+					<li><button id="xmas-button"></button></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% block content %}{% endblock %}
+
+<script src="assets/javascript/libs.js"></script>
+<script src="assets/javascript/draw_functions.js"></script>
+<script src="assets/javascript/load.js"></script>
+
+</body>
+</html>

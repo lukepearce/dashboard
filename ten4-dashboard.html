@@ -1,0 +1,84 @@
+<head>
+  <title>ten4-dashboard</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="notepad">
+	<h2>Notepad</h2>
+	<ul class="p" id="notepad"></ul>
+	<form id="notepad-add" class="p row" action="api/notepad" method="PUT">
+		<div class="w10">
+			<input type="text" name="item_text" placeholder="Text">
+			<input type="text" name="item_url" placeholder="URL (optional)">
+		</div>
+		<div class="w2 last">
+			<input type="submit" value="┼">
+		</div>
+	</form>
+</template>
+
+<template name="roulette">
+	<h2 class="relative">Ten4 Roulette™
+		<select class="select-attached" id="ten4-roulette-type">
+			<option selected value="tea">Tea</option>
+			<option value="washingUp">Washing Up</option>
+		</select>
+	</h2>
+	<ul class="row" id="ten4-roulette">
+		{% for dude in dudes %}
+			<li class="w4{% if loop.index % 3 == 0 %} last{% endif %}" data-person-name="{{ dude.name }}">
+				<label>
+					<img width="728" height="728" src="assets/images/dudes/{{ dude.portrait_filename }}" alt="{{ dude.name }}">
+					<input type="checkbox" checked>
+				</label>
+				<p>{{ dude.name }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+	<p><button id="ten4-roulette-spin">Spin!</button></p>
+</template>
+
+<template name="shoppingList">
+	<h2>This week’s shopping list</h2>
+	<ul class="l" id="shopping-list"></ul>
+	<form id="shopping-list-add" class="p row" action="api/shopping-list" method="PUT">
+		<div class="w10">
+			<input type="text" name="item_name" placeholder="Item name">
+		</div>
+		<div class="w2 last">
+			<input type="submit" value="┼">
+		</div>
+	</form>
+</template>
+
+<template name="debts">
+	<h2>Debts</h2>
+	<ul class="p" id="debts"></ul>
+	<form id="debts-add" class="p row" action="api/debts/add.php" method="POST">
+		<div class="w6">
+			<select name="debtor_id" id="debts-debtors">
+				<option value="">---</option>
+			</select>
+			owes
+			<select name="creditor_id" id="debts-creditors">
+				<option value="">---</option>
+			</select>
+		</div>
+		<div class="w4">
+			<input type="text" name="item_name" placeholder="Item name">
+		</div>
+		<div class="w2 last">
+			<input type="submit" value="┼">
+		</div>
+	</form>
+</template>
